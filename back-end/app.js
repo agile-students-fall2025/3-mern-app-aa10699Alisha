@@ -78,5 +78,15 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+// Test route for About page
+app.get('/api/about', (req, res) => {
+  res.json({
+    title: "About Page",
+    description: "This is coming from the backend!!",
+    status: "all good",
+  })
+})
+
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
