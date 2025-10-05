@@ -13,11 +13,16 @@ function About() {
   if (!data) return <p>Loading...</p>;
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>{data.title}</h1>
-      <p>{data.description}</p>
-      <img src={data.image} alt="Me" style={{ width: "200px", borderRadius: "10px" }} />
-      <small>Status: {data.status}</small>
+    <div style={{ textAlign: "center", padding: "2rem" }}>
+      <h1>{data.name}</h1>
+      <img
+        src={data.imageUrl}
+        alt="Profile"
+        style={{ width: "200px", borderRadius: "50%" }}
+      />
+      {data.bio.split("\n\n").map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ))}
     </div>
   );
 }
